@@ -1,0 +1,88 @@
+---
+layout: default
+---
+<div class="post">
+    <header class="post-header">
+      <h1 class="post-title" style="line-height: 1.15;">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span>
+          {% if site.middle_name %} {{ site.middle_name }} {% endif %}
+          {{ site.last_name }}
+            <span style="
+              font-family: 'ZhuqueFangsong', serif;
+              font-size: 0.7em;
+              color: #333;
+              margin-left: 6px;
+              position: relative;
+              top: -1px;
+            ">
+              (房明浩)
+            </span>
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="desc" style="margin-top: 0.6em;">{{ page.subtitle }}</p>
+    </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- Education -->
+    {% if page.education %}
+      <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      {% include education.liquid %}
+    {% endif %}
+
+
+    <!-- Publications -->
+    {% if page.selected_papers %}
+      <h2><i class="fa-solid fa-file-lines"></i> Publications</h2>
+      <div class="publications">
+        {% include selected_papers.liquid %}
+      </div>
+    {% endif %}
+
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+        <h2><i class="fa-solid fa-newspaper"></i> Recent News</h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+
+    <!-- Miscellaneous -->
+    {% if page.miscellaneous %}
+      <h2><i class="fa-solid fa-star"></i> Miscellaneous</h2>
+      {% include miscellaneous.liquid %}
+    {% endif %}
+
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  </article>
+</div>

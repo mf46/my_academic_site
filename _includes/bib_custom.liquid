@@ -1,0 +1,18 @@
+{% for entry in entries %}
+<li class="pub-item">
+  <strong>
+    {% if entry.url %}
+      <a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.title }}</a>
+    {% else %}
+      {{ entry.title }}
+    {% endif %}
+  </strong><br>
+
+  {% assign authors = entry.author_array %}
+  {% for a in authors %}
+    {{ a.first }} {{ a.last }}{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+
+  <br>{{ entry.year }}
+</li>
+{% endfor %}

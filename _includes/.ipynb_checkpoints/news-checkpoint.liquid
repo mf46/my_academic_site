@@ -1,0 +1,43 @@
+<div class="news">
+  {% if site.news != blank %}
+    {% assign news_size = site.news | size %}
+    {% assign news = site.news | reverse %}
+
+    {% if include.limit and page.announcements.limit %}
+      {% assign news_limit = page.announcements.limit %}
+    {% else %}
+      {% assign news_limit = news_size %}
+    {% endif %}
+
+    <div
+      class="news-list"
+      {% if include.limit and page.announcements.scrollable and news_size > 3 %}
+        style="max-height: 60vw; overflow:auto;"
+      {% endif %}
+    >
+      {% for item in news limit: news_limit %}
+        <div class="d-flex align-items-center mb-3">
+          <!-- 日期胶囊 -->
+          <span class="news-date-pill me-4">
+            {{ item.date | date: "%b %Y" }}
+          </span>
+	
+          <!-- 文本（浅色 + 斜体） -->
+          <div class="news-body">
+            {% if item.inline %}
+              <span class="news-line">
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              </span>
+            {% else %}
+              <a class="news-title" href="{{ item.url | relative_url }}">
+                {{ item.title }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>

@@ -1,0 +1,92 @@
+<div class="card mb-3 shadow-sm border-0" style="border-left: 4px solid #007bff;">
+  <div class="card-body">
+
+    <!-- Venue tag -->
+    {% if entry.abbr %}
+      <span class="badge bg-light text-dark mb-2" style="font-size: 0.8rem;">
+        {{ entry.abbr }}
+      </span>
+    {% endif %}
+
+    <!-- Title -->
+    <h5 class="card-title mb-2" style="font-weight: 600;">
+      {% if entry.url %}
+        <a href="{{ entry.url }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+          {{ entry.title }}
+        </a>
+      {% else %}
+        {{ entry.title }}
+      {% endif %}
+    </h5>
+
+    <!-- Authors -->
+    <p class="card-text mb-1" style="color: #555;">
+      {%- for author in entry.author_array -%}
+        {% assign author_is_self = false %}
+        {% assign author_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' %}
+        {% assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' %}
+
+        {% if site.scholar.last_name contains author_last and site.scholar.first_name contains author.first %}
+          {% assign author_is_self = true %}
+        {% endif %}
+
+        {% if forloop.first == false %}, {% endif %}
+        {% if author_is_self %}
+          <em>{{ author.first }} {{ author_last_html }}</em>
+        {% else %}
+          {{ author.first }} {{ author_last_html }}
+        {% endif %}
+      {%- endfor -%}
+    </p>
+
+    <!-- Journal / Type -->
+    {% if entry.booktitle %}
+      {% if entry.type == 'misc' %}
+        {% capture entrytype %}
+          <em style="color:#6c757d;">{{ entry.booktitle }}</em>
+        {% endcapture %}
+      {% else %}
+        {% capture entrytype %}
+          <em>{{ entry.booktitle }}</em>
+        {% endcapture %}
+      {% endif %}
+    {% elsif entry.journal %}
+      {% capture entrytype %}
+        <em>{{ entry.journal }}</em>
+      {% endcapture %}
+    {% elsif entry.school %}
+      {% capture entrytype %}
+        <em>{{ entry.school }}</em>
+      {% endcapture %}
+    {% else %}
+      {% capture entrytype %}
+        <em style="color:#6c757d;">Preprint</em>
+      {% endcapture %}
+    {% endif %}
+
+
+    <p class="text-muted mb-2" style="font-size: 0.9rem;">
+      {{ entrytype }}{{ entry_arxiv }}{{ entryyear }}
+    </p>
+
+    <!-- Buttons -->
+    <div>
+      {% if entry.pdf %}
+        <a href="{{ entry.pdf }}" target="_blank" class="btn btn-sm btn-outline-secondary me-1">
+          <i class="fa-regular fa-file-lines"></i> Paper
+        </a>
+      {% elsif entry.url %}
+        <a href="{{ entry.url }}" target="_blank" class="btn btn-sm btn-outline-secondary me-1">
+          <i class="fa-regular fa-file-lines"></i> Paper
+        </a>
+      {% endif %}
+
+      {% if entry.code %}
+        <a href="{{ entry.code }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+          <i class="fa-solid fa-code"></i> Code
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
