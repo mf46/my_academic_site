@@ -12,7 +12,7 @@ profile:
     <i class="fa fa-envelope"></i> mf46@illinois.edu<br>
 
 
-miscellaneous: true
+miscellaneous: false
 education: true
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -28,9 +28,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Minghao Fang, a senior student at [Zhejiang University](https://www.zju.edu.cn/english/) majoring in Computer Engineering. I'm very fortunate to be supervised by Professor [Fan Lai](https://www.fanlai.me/) at UIUC, with whom I’ve spent a wonderful year working. For now, I work with Professor [Gaoang Wang](https://cvnext.github.io/) on my senior thesis at ZJU.
+Hi! I'm Minghao Fang, an incoming MSCS student at the Siebel School of Computing and Data Science, University of Illinois Urbana-Champaign. I'm fortunate to be mentored by [Professor Fan Lai](https://www.fanlai.me/). I earned my bachelor's degree from Zhejiang University.
 
-My research explores the intersection of machine learning and computer systems, with a focus on methods that democratize the training and deployment of AI. I also conduct research on understanding and improving the capabilities of language models. I’m particularly interested in exploring the boundary between pre-training and post-training, as well as the next-generation learning paradigms that extend beyond them.
+My research explores the intersection of machine learning and computer systems, with a focus on methods that democratize the training and deployment of AI. I also conduct research on understanding and improving the capabilities of language models and agents.
 
 <!-- Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
