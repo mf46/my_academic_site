@@ -10,6 +10,7 @@ profile:
   image_circular: false
   more_info: |
     <i class="fa fa-envelope"></i> mf46@illinois.edu<br>
+    <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/minghao-fang-7291572b9/" style="color: var(--global-text-color);">LinkedIn</a><br>
 
 
 miscellaneous: false
@@ -28,9 +29,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm Minghao Fang, an incoming MSCS student at the Siebel School of Computing and Data Science, University of Illinois Urbana-Champaign. I'm fortunate to be mentored by [Professor Fan Lai](https://www.fanlai.me/). I earned my bachelor's degree from Zhejiang University.
+Hi! I’m Minghao Fang, a MSCS student at the Siebel School of Computing and Data Science, [University of Illinois Urbana-Champaign](https://illinois.edu/). I’m fortunate to be mentored by Professor [Fan Lai](https://www.fanlai.me/). I earned my bachelor’s degree from [Zhejiang University](https://www.zju.edu.cn/english/).
 
-My research explores the intersection of machine learning and computer systems, with a focus on methods that democratize the training and deployment of AI. I also conduct research on understanding and improving the capabilities of language models and agents.
+My research interests span machine learning systems, post-training strategies, and self-evolution — and the chemistry between them.
+
+<p style="font-weight: 700; color: var(--global-text-color);">I love hearing from people — I believe diverse ideas are vital for research. Do not hesitate to <a href="mailto:mf46@illinois.edu">drop me an email</a> if you are interested in similar topics. I am always open to collaboration : )</p>
 
 <!-- Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
