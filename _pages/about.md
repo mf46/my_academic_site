@@ -31,7 +31,7 @@ latest_posts:
 
 Hi! I’m Minghao Fang, a MSCS student at the Siebel School of Computing and Data Science, [University of Illinois Urbana-Champaign](https://illinois.edu/). I’m fortunate to be mentored by Professor [Fan Lai](https://www.fanlai.me/). I earned my bachelor’s degree from [Zhejiang University](https://www.zju.edu.cn/english/).
 
-My research interests span machine learning systems, post-training strategies, and self-evolution — and the chemistry between them.
+My research interests span machine learning systems, post-training strategies, and self-evolution — and the chemistry between them. Currently, I am working on some exciting topics in AI-Driven Research for Systems (ADRS).
 
 <p style="font-weight: 700; color: var(--global-text-color);">I love hearing from people — I believe diverse ideas are vital for research. Do not hesitate to <a href="mailto:mf46@illinois.edu">drop me an email</a> if you are interested in similar topics. I am always open to collaboration : )</p>
 
